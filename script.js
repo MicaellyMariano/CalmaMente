@@ -1,6 +1,4 @@
-// Consolidated site script — single copy
 
-// Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault()
@@ -15,7 +13,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         behavior: "smooth",
       })
 
-      // Close mobile menu if open
+      
       const navbarCollapse = document.querySelector(".navbar-collapse")
       if (navbarCollapse && navbarCollapse.classList.contains("show")) {
         navbarCollapse.classList.remove("show")
@@ -24,7 +22,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   })
 })
 
-// Navbar background on scroll
+
 window.addEventListener("scroll", () => {
   const navbar = document.querySelector(".navbar")
   if (!navbar) return
@@ -35,7 +33,7 @@ window.addEventListener("scroll", () => {
   }
 })
 
-// Scroll to top button
+
 const scrollTopBtn = document.getElementById("scrollTopBtn")
 
 window.addEventListener("scroll", () => {
@@ -56,7 +54,7 @@ if (scrollTopBtn) {
   })
 }
 
-// Active navigation link on scroll
+
 const sections = document.querySelectorAll("section[id]")
 const navLinks = document.querySelectorAll(".nav-link")
 
@@ -81,7 +79,6 @@ function activateNavLink() {
 
 window.addEventListener("scroll", activateNavLink)
 
-// Intersection Observer for fade-in animations
 const observerOptions = {
   threshold: 0.1,
   rootMargin: "0px 0px -50px 0px",
@@ -97,7 +94,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions)
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Initialize AOS if available
+  
   if (window.AOS) {
     window.AOS.init({
       duration: 800,
@@ -119,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 })
 
-// Mobile menu close on link click
+
 document.querySelectorAll(".nav-link").forEach((link) => {
   link.addEventListener("click", () => {
     const navbarToggler = document.querySelector(".navbar-toggler")
@@ -131,7 +128,7 @@ document.querySelectorAll(".nav-link").forEach((link) => {
   })
 })
 
-// Prevent default behavior for emergency phone links on desktop
+
 document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
   link.addEventListener("click", function (e) {
     if (window.innerWidth > 768) {
@@ -141,7 +138,7 @@ document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
   })
 })
 
-// Add loading animation
+
 window.addEventListener("load", () => {
   document.body.style.opacity = "0"
   setTimeout(() => {
