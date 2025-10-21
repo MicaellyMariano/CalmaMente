@@ -85,7 +85,7 @@ img {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: url("IMG/2f.jpg") no-repeat center center / cover;
+  background: url("img/2f.jpg") no-repeat center center / cover;
   padding-top: 80px;
   position: relative;
 }
@@ -845,7 +845,7 @@ img {
 
 .emergency-card h4 {
   font-size: 1.8rem;
-  color: var(--text-dark);
+  color: var(--dark-color);
   margin: 0.5rem 0;
 }
 
@@ -889,7 +889,7 @@ img {
 
 .resources-card h4,
 .resources-card h5 {
-  color: var(--text-dark);
+  color: var(--dark-color);
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -918,7 +918,7 @@ img {
 
 .resource-item strong {
   display: block;
-  color: var(--text-dark);
+  color: var(--dark-color);
   margin-bottom: 0.25rem;
 }
 
