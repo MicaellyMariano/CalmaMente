@@ -1,42 +1,5 @@
 
-// Sistema de Analytics Local
-function updateVisitCounter() {
-    // Pega o contador atual do localStorage ou inicia com 0
-    let visits = parseInt(localStorage.getItem('siteVisits')) || 0;
-    
-    // Pega a data da última visita
-    let lastVisit = localStorage.getItem('lastVisit');
-    let now = new Date().toISOString();
-    
-    // Se é um novo dia, incrementa o contador
-    if (!lastVisit || new Date(lastVisit).toDateString() !== new Date().toDateString()) {
-        visits++;
-        localStorage.setItem('siteVisits', visits);
-        localStorage.setItem('lastVisit', now);
-        
-        // Atualiza o contador visual na navbar
-        document.getElementById('visitCount').textContent = visits;
-        console.log(`Total de visitas: ${visits}`);
-    }
-    
-    // Atualiza o contador visual mesmo se não for uma nova visita
-    document.getElementById('visitCount').textContent = visits;
-    
-    // Atualiza o tempo de permanência
-    let sessionStart = localStorage.getItem('sessionStart');
-    if (!sessionStart) {
-        localStorage.setItem('sessionStart', now);
-    }
-    
-    // Atualiza estatísticas a cada 5 segundos
-    setInterval(() => {
-        let timeOnSite = Math.floor((new Date() - new Date(sessionStart)) / 1000);
-        console.log(`Tempo na página: ${timeOnSite} segundos`);
-    }, 5000);
-}
 
-// Inicia o contador quando a página carrega
-document.addEventListener('DOMContentLoaded', updateVisitCounter);
 
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
